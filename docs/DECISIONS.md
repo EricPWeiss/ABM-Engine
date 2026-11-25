@@ -15,3 +15,4 @@ These are proposed baseline decisions, subject to user approval and later eviden
 | ADR-009 | Complexity contracts and benchmarking | Compare algorithms, not just languages; performance targets remain unvalidated. |
 | ADR-010 | Pixel graphics before 3D | Scope control; avoid tying world state to sprites or UI. |
 | ADR-011 | BTreeSet entity registry | Deterministic traversal and simple implementation; O(log N) lookup. Revisit after benchmarking. |
+| ADR-012 | Bounded BTreeMap scheduler with FIFO queues | Deterministic chronological execution, explicit capacity and efficient scheduling without scanning all pending commands. |

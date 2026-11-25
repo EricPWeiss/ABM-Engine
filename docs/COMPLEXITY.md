@@ -60,3 +60,21 @@ Retaining E fixed-size events requires O(E) storage.
 Persistent event history, dispatch and subscriptions
 are deferred. Future implementations must prevent
 unbounded event accumulation and recursive dispatch.
+
+## Deterministic scheduler
+
+The scheduler uses a BTreeMap of simulation ticks,
+with a VecDeque of commands at each tick.
+
+Let K be pending commands and D distinct scheduled ticks.
+
+Scheduling: amortized O(log(D + 1)).
+Retrieval: O(log(D + 1)).
+Pending count and capacity checks: O(1).
+Logical storage: O(K + D).
+
+Commands execute chronologically, with FIFO ordering
+within the same tick.
+
+The queue has an explicit capacity limit.
+Scheduling in the past is rejected.
