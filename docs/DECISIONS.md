@@ -14,3 +14,4 @@ These are proposed baseline decisions, subject to user approval and later eviden
 | ADR-008 | Evaluate Bevy ECS rather than requiring it on day one | Avoid unnecessary dependencies in the first minimal runtime; revisit when real storage needs arise. |
 | ADR-009 | Complexity contracts and benchmarking | Compare algorithms, not just languages; performance targets remain unvalidated. |
 | ADR-010 | Pixel graphics before 3D | Scope control; avoid tying world state to sprites or UI. |
+| ADR-011 | BTreeSet entity registry | Deterministic traversal and simple implementation; O(log N) lookup. Revisit after benchmarking. |

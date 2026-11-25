@@ -23,3 +23,12 @@ Worst-case spatial crowding can still yield quadratic work. Do not claim that sp
 - Vary density and active commands independently of population. Include a crowded adversarial workload and long-running simulations for queue growth.
 - Add Criterion when there is a meaningful workload. Do not claim measured complexity from a small timing sample alone.
 - Keep determinism and invariants intact when optimizing. Optimize measured bottlenecks; document intentional fidelity tradeoffs.
+
+## Initial entity registry
+
+The primitive world uses BTreeSet for deterministic
+entity ordering. Lookup, insertion and removal are
+O(log N), with O(N) storage and full traversal.
+
+This is a provisional implementation. Evaluate
+indexed or ECS-based storage after benchmarking.
