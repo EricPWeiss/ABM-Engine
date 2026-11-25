@@ -32,3 +32,17 @@ O(log N), with O(N) storage and full traversal.
 
 This is a provisional implementation. Evaluate
 indexed or ECS-based storage after benchmarking.
+
+## Command execution
+
+Commands are fixed-size values with O(1) construction
+and result storage.
+
+Spawn and despawn inherit the O(log N) time complexity
+of the current BTreeSet entity registry.
+
+Rejected commands preserve authoritative world state.
+
+A sequential batch of C commands costs
+O(C log(N_max + 1)), where N_max is the maximum
+active population during execution.
