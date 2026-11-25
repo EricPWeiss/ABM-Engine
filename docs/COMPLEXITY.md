@@ -46,3 +46,17 @@ Rejected commands preserve authoritative world state.
 A sequential batch of C commands costs
 O(C log(N_max + 1)), where N_max is the maximum
 active population during execution.
+
+## Simulation events
+
+Events consist of a simulation timestamp and a
+successful command outcome.
+
+Event construction, copying and field access
+have O(1) time and space complexity.
+
+Retaining E fixed-size events requires O(E) storage.
+
+Persistent event history, dispatch and subscriptions
+are deferred. Future implementations must prevent
+unbounded event accumulation and recursive dispatch.
