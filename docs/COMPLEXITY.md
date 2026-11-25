@@ -97,3 +97,29 @@ The caller controls their retention.
 
 Clock exhaustion is checked before world mutation.
 No population-wide scan is required by the kernel.
+
+## Primitive kernel benchmark
+
+Location: examples/kernel_benchmark.rs
+
+Population sizes: 100, 1000, 10000.
+Commands per tick: 0, 2, 200.
+Ticks per repetition: 1000.
+Repetitions: 5 after one warm-up.
+Randomness: none.
+
+Population is held constant through paired
+despawn and spawn commands.
+
+Measurements include entity selection,
+command submission, scheduling, execution,
+tick report construction and validation.
+
+Initialization and console output are
+excluded from the timed region.
+
+Run using:
+cargo run --release --example kernel_benchmark
+
+Memory profiling and heterogeneous future-tick
+queue workloads require separate benchmarks.
