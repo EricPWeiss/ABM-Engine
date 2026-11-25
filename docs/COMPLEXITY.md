@@ -78,3 +78,22 @@ within the same tick.
 
 The queue has an explicit capacity limit.
 Scheduling in the past is rejected.
+
+## Integrated simulation kernel
+
+Simulation owns the world, clock and scheduler.
+
+Let C be the number of commands executed in a tick,
+N the maximum active population, and D the maximum
+number of distinct scheduled ticks during that tick.
+
+Amortized tick execution bound:
+O(1 + log(D+1) + C*(1+log(D+1)+log(N+1))).
+
+Tick report storage: O(C).
+
+The runtime does not retain historical tick reports.
+The caller controls their retention.
+
+Clock exhaustion is checked before world mutation.
+No population-wide scan is required by the kernel.

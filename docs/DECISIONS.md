@@ -16,3 +16,4 @@ These are proposed baseline decisions, subject to user approval and later eviden
 | ADR-010 | Pixel graphics before 3D | Scope control; avoid tying world state to sprites or UI. |
 | ADR-011 | BTreeSet entity registry | Deterministic traversal and simple implementation; O(log N) lookup. Revisit after benchmarking. |
 | ADR-012 | Bounded BTreeMap scheduler with FIFO queues | Deterministic chronological execution, explicit capacity and efficient scheduling without scanning all pending commands. |
+| ADR-013 | Simulation-owned state and ordered tick reports | Read-only world access, validated commands, deterministic execution and caller-controlled history retention. |
